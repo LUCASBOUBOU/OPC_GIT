@@ -1,0 +1,82 @@
+README est un fichier qui indique les informations clés de votre projet : description, environnement à utiliser, dépendances possibles et droits d’auteurs. C’est un peu comme le mode d’emploi de votre projet.
+
+gitignore est un fichier qui permet d’ignorer certains fichiers de votre projet Git. Nous reviendrons là-dessus plus tard.
+
+Rappels cmd : ls (voir le contenu d'un dossier), cd (pointer l'invité de cmd sur un dossier), cd.. (remonter d'un étage dans l'explorer),
+mkdir (créer un nouveau dossier), D: (se placer dans le disquie D), pwd (print working directory), touch index.html (creer un fichier),
+clip < C:/Users/lucas/.ssh/id_rsa.pub (copier le contenu du fichier dans le presse papier).
+
+Dans une commande git, l'argument --global permet de faire en sorte que la commande saisie sera toujours valable sur tous les futurs projets. 
+Configuration générale de git :
+git config --global user.name "Lucas Boussemart"
+
+git config --global user.email lucasboubou5@gmail.com
+
+git config --global color.diff auto
+
+git config --global color.status auto
+
+git config --global color.branch auto
+
+git config --global core.editor vim
+
+git config --global merge.tool vimdiff
+
+Pour créer et modifier un dépot local :
+1. Créer un repository en public ou privé sur GitHub.
+2. Initialiser et configurer Git dans le dossier du projet dev sur le pc en local : git init (permet de créer le dossier .git qui sert de dépot local)
+3. Pour indexer un fichier au dépôt local, il faut que ce fichier soit dans le dossier de projet et nous pouvons faire un
+git add nomFichier.html par exemple (le fichier est maintenant en stage).
+4. git status pour vérifier l'état du dépot local. 
+
+Etapes pour le dépot distant GitHub :
+Working Directory(dossier du projet en local) -> Stage (représente les fichiers de projet qui ont été modifiés) -> Repository -> Dépot distant GitHub
+
+5. git commit -m 'Ajout des fichiers' pour sauvegarder les fichiers en stage directement dans le dépot local. (-m permet d'ecrire directement le commentaire
+obligatoire du commit).
+
+Pour interagir avec le dépot distant GitHub :
+1. git remote add origin git@github.com:LUCASBOUBOU/test_OPC.git (lien SSH du repository).
+2. git branch -M main (ajoute la branche principale)
+3. git push -u origin main (passphrase : 18273645)
+4. Les fichiers du depot local ont été push vers le dépot distant.
+
+Les branches :
+1. git branch pour connaitre toutes les branches du depot local (l'etoile indique la branche dans laquelle on travaille)
+2. git branch version_mac pour creer la nouvelle branche version_mac
+3. git checkout version_mac pour se mettre dans la branche version_mac
+4. Ensuite le process est le meme (add, commit puis push) avec le push suivant -> git push -u origin version_mac
+5. Pour fusionner la branche version_mac avec la branche master : git checkout master PUIS git merge version_mac
+
+CLONER UN DEPOT DISTANT EN LOCAL :
+1.Dans le repository GitHub, copier le lien SSH
+2. git clone git@github.com:LUCASBOUBOU/test_OPC.git
+3. Mettre à jour une branche en fonction des MAJ sur GitHub : git pull origin version_mac
+4. Mettre à jour le dépot entier en fonction des MAJ sur GitHub : git pull origin main
+
+Une pull request, ou demande de pull, en français, est une fonctionnalité de GitHub qui permet de demander aux propriétaires d’un repository l’autorisation de fusionner nos changements sur la branche principale ou toute autre branche sur laquelle on souhaite apporter nos modifications.
+
+Donc si vous créez une pull request, vous avez au préalable :
+
+    Créé une nouvelle branche.
+
+    Envoyé votre code sur cette même branche.
+
+Ensuite sur github -> Compare and pull request -> Create Pull request.
+Cliquer sur Merge Pull Request pour fusionner avec la branche principale.
+
+git branch -D brancheTest pour supprimer une branche.
+git log affiche l'historique des commits réalisés sur la branche courante
+git reset --hard HEAD^ permet de réinitialiser l'index et le répertoire de travail à l'état du dernier commit
+git log    énumère en ordre chronologique inversé les commits réalisés
+La commande    git blame   permet d’examiner le contenu d’un fichier ligne par ligne et de déterminer la date à laquelle chaque ligne a été modifiée, et le nom de l’auteur des modifications
+
+
+
+
+
+
+
+
+
+
