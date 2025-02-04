@@ -71,7 +71,14 @@ git reset --hard HEAD^ permet de réinitialiser l'index et le répertoire de tra
 git log    énumère en ordre chronologique inversé les commits réalisés
 La commande    git blame   permet d’examiner le contenu d’un fichier ligne par ligne et de déterminer la date à laquelle chaque ligne a été modifiée, et le nom de l’auteur des modifications
 
+Renommer une branche master en main(reconnue par github) :
+git branch -m master main
 
+Fusionner une branche avec le main en local :
+git merge 04_02_2025
+
+Forcer la fusion entre une branche locale et le main dans github:
+git push -f origin 04_02_2025:main
 
 
 
